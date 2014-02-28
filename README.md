@@ -34,3 +34,49 @@ Task
 
 Into a nice Binary Tree.
 
+Usage
+---
+
+### Creating trees
+
+Trees can be created using the `Tree.new(value,left,right)` syntax. Assigning the left and right parameters is optional and will default to nil if not assigned. You can simply use `tree_name.left = another_tree` if you want to assign left or right values later.
+
+### Traversing
+
+There are three ways to depth-first traverse a binary tree. In order to traverse the tree in order use `Tree.in_order_traverse(tree)`. For pre-order traversal `Tree.preorder_traverse(tree)` can be used. And lastly for post order traversal `Tree.post_order_traverse(tree)` is the method to use.
+
+### Example output
+
+````
+------- Pre Order --------
+Tim
+Jony
+Dan
+Katie
+Peter
+Andrea
+Phil
+Craig
+Eddie
+------- In Order --------
+Dan
+Jony
+Peter
+Katie
+Andrea
+Tim
+Craig
+Phil
+Eddie
+------- Post Order --------
+Dan
+Peter
+Andrea
+Katie
+Jony
+Craig
+Eddie
+Phil
+Tim
+````
+
