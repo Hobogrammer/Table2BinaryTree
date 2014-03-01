@@ -43,40 +43,16 @@ Trees can be created using the `Tree.new(value,left,right)` syntax. Assigning th
 
 ### Traversing
 
-There are three ways to depth-first traverse a binary tree. In order to traverse the tree in order use `Tree.in_order_traverse(tree)`. For pre-order traversal `Tree.preorder_traverse(tree)` can be used. And lastly for post order traversal `Tree.post_order_traverse(tree)` is the method to use.
+There are three ways to depth-first traverse a binary tree. In order to traverse the tree , use `tree_obj.traverse(root_tree, "traveral method")`, where `"traversal method"` is either `in_order_traversal`, `preorder_traversal` or `in_order_traversal` input as strings.
 
 ### Example output
 
 ````
 ------- Pre Order --------
-Tim
-Jony
-Dan
-Katie
-Peter
-Andrea
-Phil
-Craig
-Eddie
+Tim,Jony,Dan,Katie,Peter,Andrea,Phil,Craig,Eddie,
 ------- In Order --------
-Dan
-Jony
-Peter
-Katie
-Andrea
-Tim
-Craig
-Phil
-Eddie
+Dan,Jony,Peter,Katie,Andrea,Tim,Craig,Phil,Eddie,
 ------- Post Order --------
-Dan
-Peter
-Andrea
-Katie
-Jony
-Craig
-Eddie
-Phil
-Tim
+Dan,Peter,Andrea,Katie,Jony,Craig,Eddie,Phil,Tim,
 ````
 
