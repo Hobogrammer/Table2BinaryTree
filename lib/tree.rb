@@ -1,34 +1,35 @@
 class Tree
   attr_accessor :value, :left, :right
+
   def initialize(value, left=nil, right=nil)
     @value = value
     @left = left
     @right = right
   end
 
-  def self.preorder_traverse(leaf)
-    return if leaf.nil?
-
-    puts leaf.value #Terminal swallows output from print
-    preorder_traverse(leaf.left)
-    preorder_traverse(leaf.right)
+  def preorder_traverse
+    "#{@value}," +
+      "#{(@left.preorder_traverse if @left)}" +
+      "#{(@right.preorder_traverse if @right)}"
   end
 
-  def self.in_order_traverse(leaf)
-    return if leaf.nil?
-
-    in_order_traverse(leaf.left)
-    puts leaf.value
-    in_order_traverse(leaf.right)
+  def in_order_traverse
+    "#{(@left.in_order_traverse if @left)}" +
+      "#{@value}," +
+      "#{(@right.in_order_traverse if @right)}"
   end
 
-  def self.post_order_traverse(leaf)
-    return if leaf.nil?
-
-    post_order_traverse(leaf.left)
-    post_order_traverse(leaf.right)
-    puts leaf.value
+  def post_order_traverse
+    "#{(@left.post_order_traverse if @left)}" +
+      "#{(@right.post_order_traverse if @right)}" +
+      "#{@value},"
   end
+end
+
+def traverse(root,method)
+  list = []
+  list << root.send(method.to_sym)
+  list[0]
 end
 
 root = Tree.new("Tim")
@@ -50,11 +51,13 @@ eigth = Tree.new("Eddie")
 sixth.right = eigth
 
 puts "------- Pre Order --------"
-Tree.preorder_traverse(root)
+
+puts pre_order = traverse(root,"preorder_traverse")
 
 puts "------- In Order --------"
 
-Tree.in_order_traverse(root)
+puts in_order = traverse(root,"in_order_traverse")
+
 puts "------- Post Order --------"
 
-Tree.post_order_traverse(root)
+puts post_order = traverse(root, "post_order_traverse")
