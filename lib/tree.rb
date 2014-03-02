@@ -8,21 +8,21 @@ class Tree
   end
 
   def preorder_traverse
-    "#{@value}," +
-      "#{(@left.preorder_traverse if @left)}" +
-      "#{(@right.preorder_traverse if @right)}"
+    @value.to_s + ", " +
+      (@left.preorder_traverse if @left).to_s +
+      (@right.preorder_traverse if @right).to_s
   end
 
   def in_order_traverse
-    "#{(@left.in_order_traverse if @left)}" +
-      "#{@value}," +
-      "#{(@right.in_order_traverse if @right)}"
+    (@left.in_order_traverse if @left).to_s  +
+      @value.to_s + ", " +
+      (@right.in_order_traverse if @right).to_s
   end
 
   def post_order_traverse
-    "#{(@left.post_order_traverse if @left)}" +
-      "#{(@right.post_order_traverse if @right)}" +
-      "#{@value},"
+    (@left.post_order_traverse if @left).to_s +
+      (@right.post_order_traverse if @right).to_s +
+      @value.to_s + ", "
   end
 end
 
